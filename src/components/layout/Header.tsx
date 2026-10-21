@@ -54,7 +54,7 @@ const navigation = [
     path: '/contact',
     onImage: grayOn,
     offImage: grayOff,
-    indicatorColor: '#bac4c4',
+    indicatorColor: '#b5c2c2',
   },
 ]
 
@@ -100,6 +100,7 @@ function Header() {
           [container-type:inline-size]
         "
       >
+        
         {/* Personal logo and name */}
         <NavLink
           to="/"
@@ -112,7 +113,7 @@ function Header() {
             z-10
             flex
             items-center
-            gap-[clamp(8px,2cqw,18px)]
+            gap-[clamp(8px,1.5cqw,18px)]
 
             max-[654px]:top-[10%]
 
@@ -133,10 +134,10 @@ function Header() {
             className="
               block
               h-auto
-              w-[clamp(34px,12cqw,160px)]
+              w-[clamp(40px,12cqw,160px)]
               shrink-0
               object-contain
-              min-[2000px]:w-[clamp(34px,13cqw,220px)]
+              min-[2000px]:w-[clamp(40px,13cqw,220px)]
             "
           />
 
@@ -145,12 +146,10 @@ function Header() {
               className="
                 whitespace-nowrap
                 font-paroxysm
-                text-[clamp(20px,5.5cqw,42px)]
+                text-[clamp(20px,4.5cqw,48px)]
                 leading-[0.9]
                 tracking-[-0.04em]
                 text-[#dedcc4]
-
-                min-[1000px]:text-[clamp(20px,2.5cqw,48px)]
               "
             >
               Riley
@@ -160,12 +159,10 @@ function Header() {
               className="
                 whitespace-nowrap
                 font-paroxysm
-                text-[clamp(20px,5.5cqw,42px)]
+                text-[clamp(20px,4.5cqw,48px)]
                 leading-[0.9]
                 tracking-[-0.04em]
                 text-[#dedcc4]
-
-                min-[1000px]:text-[clamp(20px,2.5cqw,48px)]
               "
             >
               Van Heukelum
