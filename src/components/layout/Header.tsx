@@ -29,8 +29,8 @@ const navigation = [
     indicatorColor: '#e74718',
   },
   {
-    label: 'GALLERY',
-    path: '/gallery',
+    label: 'PORTFOLIO',
+    path: '/portfolio',
     onImage: yellowOn,
     offImage: yellowOff,
     indicatorColor: '#f4b51c',
