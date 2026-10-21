@@ -3,8 +3,6 @@ import ProjectLightbox from '../components/ui/ProjectLightbox'
 
 import PortfolioCRT from '../components/ui/PortfolioCRT'
 
-import galleryScreen from '../assets/Gallery Screen.svg'
-
 const projectPathFullVideo = (filename: string) =>
   `${import.meta.env.BASE_URL}media/videos/full/${encodeURIComponent(filename)}`
 const projectPathPreviewVideo = (filename: string) =>
@@ -20,6 +18,7 @@ type Project = {
   type: 'image' | 'video'
   alt: string
   thumbnail?: string
+  blurBackground?: boolean
 }
 
 const motionProjects: Project[] = [
@@ -58,16 +57,17 @@ const motionProjects: Project[] = [
     type: 'video',
     alt: 'NES Controller Advertisement',
     thumbnail: `${import.meta.env.BASE_URL}media/thumbnails/NES Controller Advertisement.jpg`,
+    blurBackground: true,
   },
-  {
-    title: 'Spotify Logo Animation',
-    description: 'A 3D animation of the Spotify Logo that could be used for promotional advertisements.',
-    media: projectPathFullVideo('Spotify Logo Animation_Full.mp4'),
-    preview: projectPathPreviewVideo('Spotify Logo Animation_Preview.mp4'),
-    type: 'video',
-    alt: 'Spotify Logo Animation',
-    thumbnail: `${import.meta.env.BASE_URL}media/thumbnails/Spotify Logo Animation.jpg`,
-  },
+  // {
+  //   title: 'Spotify Logo Animation',
+  //   description: 'A 3D animation of the Spotify Logo that could be used for promotional advertisements.',
+  //   media: projectPathFullVideo('Spotify Logo Animation_Full.mp4'),
+  //   preview: projectPathPreviewVideo('Spotify Logo Animation_Preview.mp4'),
+  //   type: 'video',
+  //   alt: 'Spotify Logo Animation',
+  //   thumbnail: `${import.meta.env.BASE_URL}media/thumbnails/Spotify Logo Animation.jpg`,
+  // },
   {
     title: 'Exposure Balance Explainer',
     description: 'An animated illustration of the balance of aperture, shutter speed, and ISO that affect the exposure of an image, created as part of a larger explainer video on camera exposure as a whole.',
@@ -85,15 +85,25 @@ const motionProjects: Project[] = [
     type: 'video',
     alt: 'Windows 95 Styled Animated Joke',
     thumbnail: `${import.meta.env.BASE_URL}media/thumbnails/Windows95 Joke.jpg`,
+    blurBackground: true,
   },
-  {
-    title: 'Hevel Explainer Animation',
-    description: 'A research-based animated explainer exploring the Hebrew word "Hevel" and its meaning in the book of Ecclesiastes.',
-    media: projectPathFullVideo('Hevel_Full.mp4'),
-    preview: projectPathPreviewVideo('Hevel_Preview.mp4'),
+  // {
+  //   title: 'Hevel Explainer Animation',
+  //   description: 'A research-based animated explainer exploring the Hebrew word "Hevel" and its meaning in the book of Ecclesiastes.',
+  //   media: projectPathFullVideo('Hevel_Full.mp4'),
+  //   preview: projectPathPreviewVideo('Hevel_Preview.mp4'),
+  //   type: 'video',
+  //   alt: 'Hevel Explainer Animation',
+  //   thumbnail: `${import.meta.env.BASE_URL}media/thumbnails/Hevel.jpg`,
+  // },
+    {
+    title: 'Exposure Triangle Title Card',
+    description: 'An introductory title card created for a video project focused on explaining the exposure triangle in photography.',
+    media: projectPathFullVideo('Exposure Triangle_Full.mp4'),
+    preview: projectPathPreviewVideo('Exposure Triangle_Preview.mp4'),
     type: 'video',
-    alt: 'Hevel Explainer Animation',
-    thumbnail: `${import.meta.env.BASE_URL}media/thumbnails/Hevel.jpg`,
+    alt: 'Exposure Triangle Title Card',
+    thumbnail: `${import.meta.env.BASE_URL}media/thumbnails/Exposure Triangle.jpg`,
   },
   {
     title: 'Camera Setup Title Card',
@@ -105,15 +115,6 @@ const motionProjects: Project[] = [
     thumbnail: `${import.meta.env.BASE_URL}media/thumbnails/Camera Explainer Transition.jpg`,
   },
   {
-    title: 'Exposure Triangle Title Card',
-    description: 'An introductory title card created for a video project focused on explaining the exposure triangle in photography.',
-    media: projectPathFullVideo('Exposure Triangle_Full.mp4'),
-    preview: projectPathPreviewVideo('Exposure Triangle_Preview.mp4'),
-    type: 'video',
-    alt: 'Exposure Triangle Title Card',
-    thumbnail: `${import.meta.env.BASE_URL}media/thumbnails/Exposure Triangle.jpg`,
-  },
-  {
     title: 'Luthen\'s Monologue',
     description: 'A kinetic typography project set to a portion of Luthen\'s monologue from season 1, episode 10 of Andor focused on creating interesting motion with primarily typographic elements.',
     media: projectPathFullVideo('Kinetic Typography_Full.mp4'),
@@ -122,15 +123,15 @@ const motionProjects: Project[] = [
     alt: 'Luthen\'s Monologue',
     thumbnail: `${import.meta.env.BASE_URL}media/thumbnails/Kinetic Typography.jpg`,
   },
-  {
-    title: 'Lower Thirds Dragon',
-    description: 'A vector based lower thirds animation featuring basic character rigging and animation to creating a dragon and fantasy aesthetic.',
-    media: projectPathFullVideo('Lower Thirds_Full.mp4'),
-    preview: projectPathPreviewVideo('Lower Thirds_Preview.mp4'),
-    type: 'video',
-    alt: 'Lower Thirds Dragon',
-    thumbnail: `${import.meta.env.BASE_URL}media/thumbnails/Lower Thirds.jpg`,
-  },
+  // {
+  //   title: 'Lower Thirds Dragon',
+  //   description: 'A vector based lower thirds animation featuring basic character rigging and animation to creating a dragon and fantasy aesthetic.',
+  //   media: projectPathFullVideo('Lower Thirds_Full.mp4'),
+  //   preview: projectPathPreviewVideo('Lower Thirds_Preview.mp4'),
+  //   type: 'video',
+  //   alt: 'Lower Thirds Dragon',
+  //   thumbnail: `${import.meta.env.BASE_URL}media/thumbnails/Lower Thirds.jpg`,
+  // },
   // {
   //   title: 'Skinamarink Review',
   //   description: 'A short video review of the experimental indie horror film Skinamarink that focused on creating a VHS and CRt aesthetic to match the film\'s style and tone.',
@@ -214,13 +215,11 @@ function ProjectSection({
   id,
   title,
   projects,
-  crtFrame,
   onOpen,
 }: {
   id: string
   title: string
   projects: Project[]
-  crtFrame: string
   onOpen: (project: Project) => void
 }) {
   return (
@@ -240,7 +239,6 @@ function ProjectSection({
           <PortfolioCRT
             key={project.title}
             {...project}
-            crtFrame={crtFrame}
             onOpen={() => onOpen(project)}
           />
         ))}
@@ -249,7 +247,7 @@ function ProjectSection({
   )
 }
 
-function Gallery() {
+function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   
   return (
@@ -360,7 +358,6 @@ function Gallery() {
             id="motion"
             title="MOTION GRAPHICS"
             projects={motionProjects}
-            crtFrame={galleryScreen}
             onOpen={setSelectedProject}
           />
 
@@ -368,7 +365,6 @@ function Gallery() {
             id="illustration"
             title="ILLUSTRATION"
             projects={illustrationProjects}
-            crtFrame={galleryScreen}
             onOpen={setSelectedProject}
           />
 
@@ -376,7 +372,6 @@ function Gallery() {
             id="graphic-layout"
             title="GRAPHIC LAYOUT"
             projects={graphicLayoutProjects}
-            crtFrame={galleryScreen}
             onOpen={setSelectedProject}
           />
 
@@ -402,4 +397,4 @@ function Gallery() {
   )
 }
 
-export default Gallery
+export default Portfolio

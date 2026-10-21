@@ -1,6 +1,6 @@
 import selfPortraitFrame from '../assets/About Me Self Portrait.svg'
 import selfPortraitFrameMobile from '../assets/About Me Self Portrait Mobile.svg'
-import selfPortraitPhoto from '../assets/Riley Van Heukelum.jpg'
+import selfPortraitPhoto from '../assets/Riley Van Heukelum (Reduced).jpg'
 
 function AboutSelfPortrait() {
   return (
