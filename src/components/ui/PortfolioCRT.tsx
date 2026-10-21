@@ -281,9 +281,9 @@ function PortfolioCRT({
                       block max-h-full max-w-full
                       aspect-auto object-contain
                       transition-opacity duration-500
-                      ${((!hasBooted || isBooting) && !isRevealing) || isPlaying
-                        ? 'opacity-0'
-                        : 'opacity-100'}
+                      ${hasBooted && (!isBooting || isRevealing)
+                        ? 'opacity-100'
+                        : 'opacity-0'}
                     `}
                   />
 
