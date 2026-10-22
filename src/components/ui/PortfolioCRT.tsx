@@ -330,15 +330,17 @@ function PortfolioCRT({
               </>
             )}
 
-            {/* Scanlines */}
-            <div
-              className="pointer-events-none absolute inset-0 z-30"
-              aria-hidden="true"
-              style={{
-                backgroundImage:
-                  'repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, rgba(255,255,255,0.10) 4px)',
-              }}
-            />
+            {/* Scanlines — appear after the CRT has booted */}
+            {hasBooted && !isBooting && (
+              <div
+                className="pointer-events-none absolute inset-0 z-30"
+                aria-hidden="true"
+                style={{
+                  backgroundImage:
+                    'repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, rgba(255,255,255,0.10) 4px)',
+                }}
+              />
+            )}
 
             {/* CRT boot-up animation */}
             {isBooting && (
