@@ -143,7 +143,7 @@ const motionProjects: Project[] = [
   // },
 ]
 
-const illustrationProjects: Project[] = [
+const designProjects: Project[] = [
     {
     title: 'Stained Glass Warlock',
     description: 'A geometric stained glass style illustration of a warlock character designed using Adobe Photoshop.',
@@ -158,17 +158,7 @@ const illustrationProjects: Project[] = [
     type: 'image',
     alt: 'Polaroid Illustration',
   },
-  {
-    title: 'Self-Portrait',
-    description: 'A self-portrait illustration inspired by the artstyle used by Studio Ghibli.',
-    media: projectPathImage('GhibliStyleSelfPortrait.png'),
-    type: 'image',
-    alt: 'Self-Portrait',
-  },
-]
-
-const graphicLayoutProjects: Project[] = [
-  {
+    {
     title: 'AEE Warning Poster 1',
     description: 'A poster graphic designed as a set featuring an NES controller modeled from reference and styled with toon shaders as an analog horror inspired warning poster that mixed 3D and 2D elements.',
     media: projectPathImage('AAE Warning 1.jpg'),
@@ -196,19 +186,78 @@ const graphicLayoutProjects: Project[] = [
     type: 'image',
     alt: 'Chess Club Poster',
   },
-  // {
-  //   title: 'Pinesbarrow Press',
-  //   description: 'A graphic for the fiction town of Pinesbarrow designed using Adobe InDesign to create a fictional press release for the town\'s local newspaper.',
-  //   media: projectPathImage('Pinesbarrow Press.png'),
-  //   type: 'image',
-  //   alt: 'Illustration',
-  // },
+]
+
+const sketchbookProjects: Project[] = [
+  {
+    title: 'Cemetery Statue',
+    description: 'A pencil sketch of a gravestone statue found at Saint Bonaventure Cemetery in Savannah Georgia.',
+    media: projectPathImage('Cemetery Statue.jpeg'),
+    type: 'image',
+    alt: 'Cemetery Statue Sketch',
+  },
+  {
+    title: 'Oppenheimer',
+    description: 'A portrait sketch of Cillian Murphy as J. Robert Oppenheimer from the movie Oppenheimer by Christopher Nolan.',
+    media: projectPathImage('Oppenheimer.jpeg'),
+    type: 'image',
+    alt: 'Oppenheimer Sketch',
+  },
+  {
+    title: 'The Grabber',
+    description: 'A portrait sketch of Ethan Hawke wearing a mask as The Grabber from the movie The Black Phone.',
+    media: projectPathImage('The Grabber.jpeg'),
+    type: 'image',
+    alt: 'The Grabber Sketch',
+  },
+  {
+    title: 'Man in Suit',
+    description: 'A sketch drawing of a man posing in a suit and fedora.',
+    media: projectPathImage('Man in Suit.jpeg'),
+    type: 'image',
+    alt: 'Man in Suit Sketch',
+  },
+  {
+    title: 'Woman in Dress',
+    description: 'A sketch drawing of a woman posing in a flowing dress.',
+    media: projectPathImage('Woman in Dress.jpeg'),
+    type: 'image',
+    alt: 'Woman in Dress Sketch',
+  },
+  {
+    title: 'Chef Slowik',
+    description: 'A portrait sketch of Ralph Fiennes as Chef Julian Slowik from the movie The Menu.',
+    media: projectPathImage('Chef Slowik.jpeg'),
+    type: 'image',
+    alt: 'Chef Slowik Sketch',
+  },
+  {
+    title: 'Portrait of a Woman',
+    description: 'A portrait sketch of an old studio photograph of a young woman with dark, curled hair and a white dress.',
+    media: projectPathImage('Woman Portrait.jpeg'),
+    type: 'image',
+    alt: 'Portrait of a Woman Sketch',
+  },
+    {
+    title: 'Hands',
+    description: 'Two sketches of hands drawn from life, one in a relaxed semi-open pose and the other in mid-snap.',
+    media: projectPathImage('Hands.jpeg'),
+    type: 'image',
+    alt: 'Hands Sketch',
+  },
+  {
+    title: 'Pinstripe Suit',
+    description: 'A sketch of a man in a pinstripe suit.',
+    media: projectPathImage('Pinstripe Suit.jpeg'),
+    type: 'image',
+    alt: 'Pinstripe Suit Sketch',
+  }
 ]
 
 const allProjects = [
   ...motionProjects,
-  ...illustrationProjects,
-  ...graphicLayoutProjects,
+  ...designProjects,
+  ...sketchbookProjects,
 ]
 
 function ProjectSection({
@@ -310,7 +359,7 @@ function Portfolio() {
               </a>
 
               <a
-                href="#illustration"
+                href="#design"
                 className="
                   group flex min-w-0 items-center justify-between gap-3
                   border border-[#8c8174] bg-[#e3dfca]
@@ -325,13 +374,13 @@ function Portfolio() {
                   <span className="mb-1 block text-[10px] text-[#756a5d] group-hover:text-[#c0b69f]">
                     DIRECTORY / 02
                   </span>
-                  <span className="block">ILLUSTRATION</span>
+                  <span className="block">DESIGN</span>
                 </span>
                 <span aria-hidden="true">↘</span>
               </a>
 
               <a
-                href="#graphic-layout"
+                href="#sketchbook"
                 className="
                   group flex min-w-0 items-center justify-between gap-3
                   border border-[#8c8174] bg-[#e3dfca]
@@ -346,7 +395,7 @@ function Portfolio() {
                   <span className="mb-1 block text-[10px] text-[#756a5d] group-hover:text-[#c0b69f]">
                     DIRECTORY / 03
                   </span>
-                  <span className="block">GRAPHIC LAYOUT</span>
+                  <span className="block">SKETCHBOOK</span>
                 </span>
                 <span aria-hidden="true">↘</span>
               </a>
@@ -362,16 +411,16 @@ function Portfolio() {
           />
 
           <ProjectSection
-            id="illustration"
-            title="ILLUSTRATION"
-            projects={illustrationProjects}
+            id="design"
+            title="DESIGN"
+            projects={designProjects}
             onOpen={setSelectedProject}
           />
 
           <ProjectSection
-            id="graphic-layout"
-            title="GRAPHIC LAYOUT"
-            projects={graphicLayoutProjects}
+            id="sketchbook"
+            title="SKETCHBOOK"
+            projects={sketchbookProjects}
             onOpen={setSelectedProject}
           />
 
