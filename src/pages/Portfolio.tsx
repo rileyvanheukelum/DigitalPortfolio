@@ -10,6 +10,13 @@ const projectPathPreviewVideo = (filename: string) =>
 const projectPathImage = (filename: string) =>
   `${import.meta.env.BASE_URL}media/images/${encodeURIComponent(filename)}`
 
+type ProjectMedia = {
+  media: string
+  type: 'image' | 'video'
+  alt: string
+  thumbnail?: string
+}
+
 type Project = {
   title: string
   description: string
@@ -19,6 +26,7 @@ type Project = {
   alt: string
   thumbnail?: string
   blurBackground?: boolean
+  additionalMedia?: ProjectMedia[]
 }
 
 const motionProjects: Project[] = [
@@ -69,15 +77,6 @@ const motionProjects: Project[] = [
   //   thumbnail: `${import.meta.env.BASE_URL}media/thumbnails/Spotify Logo Animation.jpg`,
   // },
   {
-    title: 'Exposure Balance Explainer',
-    description: 'An animated illustration of the balance of aperture, shutter speed, and ISO that affect the exposure of an image, created as part of a larger explainer video on camera exposure as a whole.',
-    media: projectPathFullVideo('Exposure Balance_Full.mp4'),
-    preview: projectPathPreviewVideo('Exposure Balance_Preview.mp4'),
-    type: 'video',
-    alt: 'Exposure Balance Explainer',
-    thumbnail: `${import.meta.env.BASE_URL}media/thumbnails/Exposure Balance.jpg`,
-  },
-    {
     title: 'Windows 95 Styled Animated Joke',
     description: 'An animated question-response joke inspired by retro Windows 95 computer boot up sequences and OS interfaces.',
     media: projectPathFullVideo('Windows95 Joke_Full.mp4'),
@@ -86,6 +85,15 @@ const motionProjects: Project[] = [
     alt: 'Windows 95 Styled Animated Joke',
     thumbnail: `${import.meta.env.BASE_URL}media/thumbnails/Windows95 Joke.jpg`,
     blurBackground: true,
+  },
+  {
+    title: 'Exposure Balance Explainer',
+    description: 'An animated illustration of the balance of aperture, shutter speed, and ISO that affect the exposure of an image, created as part of a larger explainer video on camera exposure as a whole.',
+    media: projectPathFullVideo('Exposure Balance_Full.mp4'),
+    preview: projectPathPreviewVideo('Exposure Balance_Preview.mp4'),
+    type: 'video',
+    alt: 'Exposure Balance Explainer',
+    thumbnail: `${import.meta.env.BASE_URL}media/thumbnails/Exposure Balance.jpg`,
   },
   // {
   //   title: 'Hevel Explainer Animation',
@@ -158,26 +166,46 @@ const designProjects: Project[] = [
     type: 'image',
     alt: 'Polaroid Illustration',
   },
-    {
-    title: 'AEE Warning Poster 1',
-    description: 'A poster graphic designed as a set featuring an NES controller modeled from reference and styled with toon shaders as an analog horror inspired warning poster that mixed 3D and 2D elements.',
+  // {
+  //   title: 'AEE Warning Poster 1',
+  //   description: 'A poster graphic designed as a set featuring an NES controller modeled from reference and styled with toon shaders as an analog horror inspired warning poster that mixed 3D and 2D elements.',
+  //   media: projectPathImage('AAE Warning 1.jpg'),
+  //   type: 'image',
+  //   alt: 'AEE Warning Poster 1',
+  // },
+  // {
+  //   title: 'AEE Warning Poster 2',
+  //   description: 'A poster graphic designed as a set featuring a kitchen pan modeled from reference and styled with toon shaders as an analog horror inspired warning poster that mixed 3D and 2D elements.',
+  //   media: projectPathImage('AAE Warning 2.jpg'),
+  //   type: 'image',
+  //   alt: 'AEE Warning Poster 2',
+  // },
+  // {
+  //   title: 'AEE Warning Poster 3',
+  //   description: 'A poster graphic designed as a set featuring an office desk modeled from reference and styled with toon shaders as an analog horror inspired warning poster that mixed 3D and 2D elements.',
+  //   media: projectPathImage('AAE Warning 3.jpg'),
+  //   type: 'image',
+  //   alt: 'AEE Warning Poster 3',
+  // },
+  {
+    title: 'AEE Warning Posters',
+    description:
+      'A set of three analog horror inspired warning posters featuring an NES controller, a kitchen pan, and an office desk. Each poster combines 3D models styled with toon shaders and 2D graphic elements to create a cohesive visual series.',
     media: projectPathImage('AAE Warning 1.jpg'),
     type: 'image',
-    alt: 'AEE Warning Poster 1',
-  },
-  {
-    title: 'AEE Warning Poster 2',
-    description: 'A poster graphic designed as a set featuring a kitchen pan modeled from reference and styled with toon shaders as an analog horror inspired warning poster that mixed 3D and 2D elements.',
-    media: projectPathImage('AAE Warning 2.jpg'),
-    type: 'image',
-    alt: 'AEE Warning Poster 2',
-  },
-  {
-    title: 'AEE Warning Poster 3',
-    description: 'A poster graphic designed as a set featuring an office desk modeled from reference and styled with toon shaders as an analog horror inspired warning poster that mixed 3D and 2D elements.',
-    media: projectPathImage('AAE Warning 3.jpg'),
-    type: 'image',
-    alt: 'AEE Warning Poster 3',
+    alt: 'AEE Warning Poster 1 featuring an NES controller',
+    additionalMedia: [
+      {
+        media: projectPathImage('AAE Warning 2.jpg'),
+        type: 'image',
+        alt: 'AEE Warning Poster 2 featuring a kitchen pan',
+      },
+      {
+        media: projectPathImage('AAE Warning 3.jpg'),
+        type: 'image',
+        alt: 'AEE Warning Poster 3 featuring an office desk',
+      },
+    ],
   },
   {
     title: 'Chess Club Poster',
