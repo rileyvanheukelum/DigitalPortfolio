@@ -14,6 +14,12 @@ interface PortfolioCRTProps {
   thumbnail?: string
   blurBackground?: boolean
   onOpen: () => void
+  additionalMedia?: {
+    media: string
+    type: 'image' | 'video'
+    alt: string
+    thumbnail?: string
+  }[]
 }
 
 const bootAnimationSrc =
