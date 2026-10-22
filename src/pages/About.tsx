@@ -1,9 +1,9 @@
 import leftSidebar from '../assets/About Me Left Sidebar.svg'
 import rightSidebar from '../assets/About Me Right Sidebar.svg'
 
-import AboutSelfPortrait from '../components/AboutSelfPortrait'
-import AboutProfile from '../components/AboutProfile'
-import AboutCRT from '../components/AboutCRT'
+import AboutSelfPortrait from '../components/ui/AboutSelfPortrait'
+import AboutProfile from '../components/ui/AboutProfile'
+import AboutCRT from '../components/ui/AboutCRT'
 
 function About() {
   return (

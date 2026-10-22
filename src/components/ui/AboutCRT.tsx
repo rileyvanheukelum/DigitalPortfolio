@@ -1,5 +1,5 @@
-import crtFrame from '../assets/About Me CRT TV.svg'
-import crtFrameMobile from '../assets/About Me CRT TV Mobile.svg'
+import crtFrame from '../../assets/About Me CRT TV.svg'
+import crtFrameMobile from '../../assets/About Me CRT TV Mobile.svg'
 
 function AboutCRT() {
   return (
@@ -17,7 +17,9 @@ function AboutCRT() {
           px-[4%]
           py-[3%]
           font-rounded
-          text-[clamp(6.9px,2.1cqw,30px)]
+          text-[clamp(6.5px,2.1cqw,28px)]
+          min-[1200px]:text-[clamp(8px,1.1cqw,20px)]
+          min-[1500px]:text-[clamp(8px,0.875cqw,20px)]
           font-bold
           leading-[1.25]
           text-[#dedcc4]
@@ -29,17 +31,14 @@ function AboutCRT() {
           min-[1200px]:bottom-[20%]
           min-[1200px]:px-[5%]
           min-[1200px]:py-[4%]
-          min-[1200px]:text-[clamp(8px,.85cqw,22px)]
-          min-[1200px]:max-[1500px]:text-[clamp(8px,1.1cqw,20px)]
         "
       >
         <h1
           className="
             mb-[4%]
             font-paroxysm
-            text-[clamp(12px,5cqw,80px)]
+            text-[clamp(16px,3cqw,54px)]
             leading-none
-            min-[1200px]:text-[clamp(14px,3cqw,54px)]
           "
         >
           Operator:

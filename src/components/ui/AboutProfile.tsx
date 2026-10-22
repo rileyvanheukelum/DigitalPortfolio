@@ -1,36 +1,38 @@
-import profileFrame from '../assets/About Me Profile.svg'
+import profileFrame from '../../assets/About Me Profile.svg'
 
 function AboutProfile() {
   return (
-    <div className="relative w-full container-type:inline-size">
+    <div className="relative w-full min-w-0 container-type:inline-size">
       {/* Profile information */}
       <div
         className="
           absolute
-          inset-[13%]
+          inset-[14%]
           z-20
           flex
           flex-col
           justify-center
           font-rounded
-          text-[clamp(7px,.75cqw,18px)]
-          max-[1200px]:text-[clamp(7px,3cqw,40px)]
-          max-[1800px]:text-[clamp(7px,.8cqw,14px)]
+          text-[clamp(9px,3.0cqw,35px)]
           font-bold
           uppercase
-          leading-[2.25]
+          leading-[2.0]
           text-[#dedcc4]
           -translate-y-0.75
+
+          min-[1200px]:text-[clamp(7px,1cqw,18px)]
+          min-[1500px]:text-[clamp(7px,0.75cqw,18px)]
         "
       >
         <div
           className="
             font-paroxysm
-            text-[clamp(7px,1cqw,22px)]
-            max-[1200px]:text-[clamp(7px,3.5cqw,40px)]
-            max-[1800px]:text-[clamp(7px,1cqw,20px)]
+            text-[clamp(13px,4.0cqw,40px)]
             translate-y-1
             -translate-x-2.25
+
+            min-[1200px]:text-[clamp(7px,1cqw,22px)]
+            min-[1500px]:text-[clamp(7px,1cqw,22px)]
           "
         >
           Profile:

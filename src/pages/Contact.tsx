@@ -68,11 +68,13 @@ function Contact() {
                 <p
                   className="
                     font-rounded
-                    text-[clamp(9px,2.1cqw,16px)]
+                    text-[clamp(10px,2.8cqw,17px)]
                     font-bold
                     uppercase
                     tracking-[0.15em]
                     text-[#9c9989]
+
+                    min-[1024px]:text-[clamp(9px,1.8cqw,16px)]
                   "
                 >
                   Communication Terminal
@@ -82,9 +84,11 @@ function Contact() {
                   className="
                     mt-[3%]
                     font-paroxysm
-                    text-[clamp(22px,7cqw,48px)]
+                    text-[clamp(25px,7cqw,48px)]
                     leading-none
                     tracking-[-0.04em]
+
+                    min-[1024px]:text-[clamp(18px,4.5cqw,48px)]
                   "
                 >
                   Let's Connect
@@ -93,11 +97,13 @@ function Contact() {
                 <p
                   className="
                     mt-[5%]
-                    max-w-[92%]
+                    max-w-[100%]
                     font-rounded
-                    text-[clamp(10px,2.7cqw,19px)]
+                    text-[clamp(8px,2.6cqw,30px)]
                     leading-[1.4]
                     text-[#dedcc4]/75
+
+                    min-[1024px]:text-[clamp(10px,2.7cqw,19px)]
                   "
                 >
                   Have a project, question, or idea? Whether you're

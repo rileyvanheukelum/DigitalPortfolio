@@ -281,9 +281,9 @@ function PortfolioCRT({
                       block max-h-full max-w-full
                       aspect-auto object-contain
                       transition-opacity duration-500
-                      ${((!hasBooted || isBooting) && !isRevealing) || isPlaying
-                        ? 'opacity-0'
-                        : 'opacity-100'}
+                      ${hasBooted && (!isBooting || isRevealing)
+                        ? 'opacity-100'
+                        : 'opacity-0'}
                     `}
                   />
 
@@ -330,15 +330,17 @@ function PortfolioCRT({
               </>
             )}
 
-            {/* Scanlines */}
-            <div
-              className="pointer-events-none absolute inset-0 z-30"
-              aria-hidden="true"
-              style={{
-                backgroundImage:
-                  'repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, rgba(255,255,255,0.10) 4px)',
-              }}
-            />
+            {/* Scanlines — appear after the CRT has booted */}
+            {hasBooted && !isBooting && (
+              <div
+                className="pointer-events-none absolute inset-0 z-30"
+                aria-hidden="true"
+                style={{
+                  backgroundImage:
+                    'repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, rgba(255,255,255,0.10) 4px)',
+                }}
+              />
+            )}
 
             {/* CRT boot-up animation */}
             {isBooting && (

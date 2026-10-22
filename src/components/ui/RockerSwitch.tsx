@@ -91,17 +91,16 @@ function RockerSwitch({
           {/* Label */}
           <span
             className="
-              mt-[clamp(2px,0.21cqw,4px)]
+              mt-[clamp(2px,0.3cqw,5px)]
               whitespace-nowrap
               font-rounded
-              text-[clamp(6px,0.625cqw,12px)]
+              text-[clamp(8px,1cqw,14px)]
               font-bold
               leading-none
               tracking-[-0.02em]
-              text-[#514b43]
+              text-[#332d27]
               transition-colors
               duration-150
-              group-[.active]:text-[#332d27]
             "
           >
             {label}
